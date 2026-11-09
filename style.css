@@ -1,0 +1,150 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #171c28, #303848);
+    color: #fff;
+}
+
+/* Main app container */
+.container {
+    width: 100%;
+    max-width: 550px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #202735;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */
+.app-header h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.app-header p {
+    color: #aab2c3;
+    font-size: 0.95rem;
+}
+
+/* Role selection */
+.hero-selector h2 {
+    margin-top: 35px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.role-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+/* Buttons */
+.role-buttons button {
+    flex: 1;
+    min-width: 110px;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    background: #303848;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.role-buttons button:hover {
+    background: #f99e29;
+    color: #171c28;
+    transform: translateY(-3px);
+}
+
+.role-buttons button:focus-visible {
+    outline: 3px solid #f99e29;
+    outline-offset: 3px;
+}
+
+/* Hero display card */
+.hero-card {
+    min-height: 350px;
+    padding: 25px;
+    background: #252d3b;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero image */
+.imgToon {
+    display: none;
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    object-fit: contain;
+}
+
+/* Selected hero name */
+#hero-display {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #f99e29;
+    text-transform: uppercase;
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .app-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .role-buttons button {
+        min-width: 80px;
+        font-size: 0.8rem;
+    }
+
+    .hero-card {
+        min-height: 280px;
+    }
+
+    .imgToon {
+        height: 200px;
+    }
+}
+
+
+
+.imgToon {
+    animation: heroReveal 0.25s ease-out;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
